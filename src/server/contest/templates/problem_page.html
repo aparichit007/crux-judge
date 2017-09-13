@@ -5,20 +5,21 @@
 {% block body %}
     {% csrf_token %}
 
-    {% if messages %}
+    <!-- {% if messages %}
         <div class="alert alert-success">
             {% for message in messages %}
                 {{ message }}
             {% endfor %}
         </div>
-    {% endif %}
+    {% endif %} -->
 
     <br><br>
     <div class="container">
-        <a class="btn btn-primary" style="color:white; text-decoration: None" href = "/contest/submissions/">View All Submissions</a>
+        <div class="p-header">
+            <a class="p-button" href = "/contest/submissions/">View All Submissions</a>
 
-        <h3>PROBLEMS</h3>
-        <br>
+            <h3>Problems</h3>
+        </div>
 
         {% for contest_id,id, title in data %}
             {% csrf_token %}
